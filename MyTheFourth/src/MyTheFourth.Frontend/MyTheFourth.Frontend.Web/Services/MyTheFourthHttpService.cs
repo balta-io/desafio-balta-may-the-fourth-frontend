@@ -1,7 +1,16 @@
+using MyTheFourth.Frontend.Web.Components;
+using MyTheFourth.Frontend.Web.Extensions;
+using MyTheFourth.Frontend.Web.Models;
+using MyTheFourth.Frontend.Web.Services.Interfaces;
+
+namespace MyTheFourth.Frontend.Web.Services;
+
 public class MyTheFourthHttpService :
 IMoviesService,
 ICharactersService,
-IPlanetsService
+IPlanetsService,
+IVehiclesService,
+IStarshipsService
 {
     private readonly HttpClient _client;
 
@@ -73,5 +82,19 @@ IPlanetsService
         return await response.GetContentData<IEnumerable<Vehicle>>() ?? Enumerable.Empty<Vehicle>();
     }
 
+    public async Task<Starship?> GetStarshipAsync(string starshipId)
+    {
+        var response = await _client.GetAsync($"{MyTheFourthHttpServicePath.Starships}/{starshipId}");
 
+        return await response.GetContentData<Starship>();
+    }
+
+    public async Task<IEnumerable<Starship>> ListStarshipsAsync(int? page = null, int? pageSize = null)
+    {
+        var response = await _client.GetAsync($"{MyTheFourthHttpServicePath.Starships}");
+
+        return await response.GetContentData<IEnumerable<Starship>>() ?? Enumerable.Empty<Starship>();
+    }
 }
+
+

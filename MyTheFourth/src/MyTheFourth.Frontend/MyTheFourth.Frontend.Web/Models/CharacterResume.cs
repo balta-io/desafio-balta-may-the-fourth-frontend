@@ -1,5 +1,7 @@
 using System.Text.Json.Serialization;
 
+namespace MyTheFourth.Frontend.Web.Models;
+
 public class CharacterResume
 {
     [JsonPropertyName("id")]

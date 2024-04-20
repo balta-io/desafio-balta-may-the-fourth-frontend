@@ -1,5 +1,7 @@
 using System.Text.Json.Serialization;
 
+namespace MyTheFourth.Frontend.Web.Models;
+
 public class StarshipResume
 {
     [JsonPropertyName("id")]
@@ -8,4 +10,3 @@ public class StarshipResume
     [JsonPropertyName("name")]
     public string Name { get; set; } = null!;
 }
-

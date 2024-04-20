@@ -1,3 +1,7 @@
+using MyTheFourth.Frontend.Web.Models;
+
+namespace MyTheFourth.Frontend.Web.Services.Interfaces;
+
 public interface IMoviesService
 {
 

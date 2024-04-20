@@ -1,5 +1,7 @@
 using System.Text.Json.Serialization;
 
+namespace MyTheFourth.Frontend.Web.Models;
+
 public class Starship : StarshipResume
 {
 
@@ -47,4 +49,3 @@ public class Starship : StarshipResume
         Movies = new List<MovieResume>();
     }
 }
-

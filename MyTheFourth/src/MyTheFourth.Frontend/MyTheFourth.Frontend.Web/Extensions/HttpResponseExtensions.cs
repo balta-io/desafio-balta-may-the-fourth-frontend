@@ -1,5 +1,7 @@
 using System.Text.Json;
 
+namespace MyTheFourth.Frontend.Web.Extensions;
+
 public static class HttpResponseExtensions
 {
     public static async Task<T?> GetContentData<T>(this HttpResponseMessage response) where T : class
