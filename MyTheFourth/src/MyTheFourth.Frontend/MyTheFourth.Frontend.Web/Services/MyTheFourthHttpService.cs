@@ -57,5 +57,21 @@ IPlanetsService
     }
 
 
+    public async Task<Vehicle?> GetVehicleAsync(string vehicleId)
+    {
+        var response = await _client.GetAsync($"{MyTheFourthHttpServicePath.Vehicles}/{vehicleId}");
+
+        return await response.GetContentData<Vehicle>();
+    }
+
+
+    //TODO: criar feature para verificar a existencia de parametros e incluir
+    public async Task<IEnumerable<Vehicle>> ListVehiclesAsync(int? page = null, int? pageSize = null)
+    {
+        var response = await _client.GetAsync($"{MyTheFourthHttpServicePath.Vehicles}");
+
+        return await response.GetContentData<IEnumerable<Vehicle>>() ?? Enumerable.Empty<Vehicle>();
+    }
+
 
 }
