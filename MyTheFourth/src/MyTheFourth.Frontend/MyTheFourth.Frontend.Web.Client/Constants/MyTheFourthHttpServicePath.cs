@@ -1,4 +1,4 @@
-namespace MyTheFourth.Frontend.Web.Components;
+namespace MyTheFourth.Frontend.Web.Client.Constants;
 
 public static class MyTheFourthHttpServicePath
 {

@@ -1,0 +1,30 @@
+@page "/starships/{starshipId}"
+
+@inject IStarshipsService StarShipsService
+@attribute [StreamRendering]
+
+@if(Starship == null) {
+    <span>Loading...</span>
+}
+else {
+    <div>
+        <div>
+            <div>
+                <div>Nome:</div>
+                <div>@Starship.Name</div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public string starshipId {get; set;} = null!;
+
+    private Starship? Starship = null;
+
+    protected override async Task OnInitializedAsync() {
+
+        Starship = await StarShipsService.GetStarshipAsync(starshipId);
+    }
+}    

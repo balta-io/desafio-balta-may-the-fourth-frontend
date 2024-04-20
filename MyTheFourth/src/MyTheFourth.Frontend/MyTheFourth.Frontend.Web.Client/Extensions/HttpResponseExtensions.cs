@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace MyTheFourth.Frontend.Web.Extensions;
+namespace MyTheFourth.Frontend.Web.Client.Extensions;
 
 public static class HttpResponseExtensions
 {

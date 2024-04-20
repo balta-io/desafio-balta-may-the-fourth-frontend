@@ -1,5 +1,5 @@
+using MyTheFourth.Frontend.Web.Client.Services.Interfaces;
 using MyTheFourth.Frontend.Web.Models;
-using MyTheFourth.Frontend.Web.Services.Interfaces;
 
 public class MyTheFourthHttpServiceFake :
 IMoviesService,

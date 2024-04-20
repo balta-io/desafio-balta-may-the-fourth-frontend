@@ -1,6 +1,6 @@
 using MyTheFourth.Frontend.Web.Models;
 
-namespace MyTheFourth.Frontend.Web.Services.Interfaces;
+namespace MyTheFourth.Frontend.Web.Client.Services.Interfaces;
 
 public interface IVehiclesService
 {

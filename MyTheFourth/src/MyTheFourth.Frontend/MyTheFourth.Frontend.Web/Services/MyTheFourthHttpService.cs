@@ -1,9 +1,9 @@
-using MyTheFourth.Frontend.Web.Components;
-using MyTheFourth.Frontend.Web.Extensions;
+using MyTheFourth.Frontend.Web.Client.Constants;
+using MyTheFourth.Frontend.Web.Client.Extensions;
+using MyTheFourth.Frontend.Web.Client.Services.Interfaces;
 using MyTheFourth.Frontend.Web.Models;
-using MyTheFourth.Frontend.Web.Services.Interfaces;
 
-namespace MyTheFourth.Frontend.Web.Services;
+namespace MyTheFourth.Frontend.Web.Client.Services;
 
 public class MyTheFourthHttpService :
 IMoviesService,

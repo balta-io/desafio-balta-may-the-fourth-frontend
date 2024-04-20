@@ -5,6 +5,7 @@ using MyTheFourth.Frontend.Web.Components.Account;
 using MyTheFourth.Frontend.Web.Data;
 using MyTheFourth.Frontend.Web.Client.Pages;
 using MyTheFourth.Frontend.Web.Components;
+using MyTheFourth.Frontend.Web.DependencyInjections;
 
 
 var builder = WebApplication.CreateBuilder(args);
