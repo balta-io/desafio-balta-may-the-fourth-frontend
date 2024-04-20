@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using MyTheFourth.Frontend.Web.Client.Pages;
-using MyTheFourth.Frontend.Web.Components;
 using MyTheFourth.Frontend.Web.Components.Account;
 using MyTheFourth.Frontend.Web.Data;
+using MyTheFourth.Frontend.Web.Client.Pages;
+using MyTheFourth.Frontend.Web.Components;
+using MyTheFourth.Frontend.Web.DependencyInjections;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
+
+
+builder.Services.AddApiHttpServiceFake();
+
 
 builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddScoped<IdentityUserAccessor>();
