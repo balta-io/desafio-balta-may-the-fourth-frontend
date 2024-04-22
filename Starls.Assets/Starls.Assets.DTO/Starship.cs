@@ -12,7 +12,7 @@ public class Starship
 
     public decimal CostInCredits { get; set; } 
 
-    public decimal Lenght { get; set; } 
+    public decimal Length { get; set; } 
 
     public decimal MaxSpeed { get; set; } 
 
