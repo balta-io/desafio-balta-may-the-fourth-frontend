@@ -16,7 +16,7 @@ public class Movie
 
     public DateTime ReleaseDAte { get; set; }
 
-    public List<Charactere> Characteres { get; set; } = new();
+    public List<Character> Characteres { get; set; } = new();
 
     public List<Planet> Planets { get; set; } = new();
 

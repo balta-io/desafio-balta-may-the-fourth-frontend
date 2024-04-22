@@ -12,7 +12,7 @@ public class Starship
 
     public decimal CostInCredits { get; set; } 
 
-    public decimal Lenght { get; set; } 
+    public decimal Length { get; set; } 
 
     public decimal MaxSpeed { get; set; } 
 
@@ -26,7 +26,7 @@ public class Starship
 
     public string Class { get; set; } = string.Empty;
 
-    public List<Movie> Movies { get; set; }
+    public List<Movie> Movies { get; set; } = new();
 
-    //TODO: Add all properties
+  
 }
