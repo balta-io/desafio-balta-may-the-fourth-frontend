@@ -1,15 +1,28 @@
-﻿namespace Starls.Assets.DTO
+﻿namespace Starls.Assets.DTO;
+
+public class Movie
 {
-    public class Movie
-    {
-        public string Title { get; set; }
+    public int Id { get; set; }
 
-        public int Episode { get; set; }
+    public string Title { get; set; } = string.Empty;
 
-        public string OpeningCrawl { get; set; }
+    public int Episode { get; set; }
 
-        public int Director { get; set; }
+    public string OpeningCrawl { get; set; } = string.Empty;
 
-        //TODO: Add all properties
-    }
+    public string Director { get; set; } = string.Empty;
+
+    public string Producer { get; set; } = string.Empty;
+
+    public DateTime ReleaseDAte { get; set; }
+
+    public List<Charactere> Characteres { get; set; } = new();
+
+    public List<Planet> Planets { get; set; } = new();
+
+    public List<Vehicle> Vehicles { get; set; } = new();
+
+    public List<Starship> Starships { get; set; } = new();
+
+
 }
