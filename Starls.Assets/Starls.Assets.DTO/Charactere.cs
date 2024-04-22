@@ -1,6 +1,6 @@
 ﻿namespace Starls.Assets.DTO
 {
-    public class Charactere
+    public class Character
     {
         public string Name { get; set; } = string.Empty;
 
