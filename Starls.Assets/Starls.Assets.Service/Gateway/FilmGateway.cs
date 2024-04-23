@@ -2,7 +2,6 @@
 using Starls.Assets.DTO.Configuration;
 using Starls.Assets.Service.Gateway.Extensions;
 using Starls.Assets.Service.Gateway.Interfaces;
-using Api = Starls.Assets.Service.Gateway.ApiResponseModel;
 
 namespace Starls.Assets.Service.Gateway
 {
@@ -16,13 +15,20 @@ namespace Starls.Assets.Service.Gateway
             this.FilmProviderConfiguration = appConfiguration.FilmProviderConfiguration;
         }
 
-        public async Task<PagedContent<Film>> GetFilmsAsync(int page = 0)
+        public async Task<IEnumerable<Film>> GetFilmsAsync()
         {
-            var urlPath = this.GetApiResourcePath(this.FilmProviderConfiguration.Resource, page);
+            var urlPath = this.GetApiResourcePath(this.FilmProviderConfiguration.Resource);
 
-            var result = await this.GetPagedAsync<Api.Film>(urlPath);
+            if (this.FilmProviderConfiguration.Paginated)
+            {
+                var pagedResult = await this.GetPagedAsync<SwApiResponseModel.Film>(urlPath);
 
-            return result.ToDto();
+                return pagedResult.ToDto().Results;
+            }
+
+            var result = await this.GetManyAsync<Film>(urlPath);
+
+            return result ?? [];
         }
     }
 }

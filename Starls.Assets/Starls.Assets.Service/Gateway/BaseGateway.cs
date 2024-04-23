@@ -28,6 +28,22 @@ namespace Starls.Assets.Service.Gateway
             }
         }
 
+        internal async Task<IEnumerable<T>> GetManyAsync<T>(string path)
+        {
+            try
+            {
+                var result = await this.httpClient.GetFromJsonAsync<IEnumerable<T>>(path);
+
+                return result;
+            }
+            catch (Exception)
+            {
+                //Log possible errors
+
+                throw;
+            }
+        }
+
         protected string GetApiResourcePath(string apiResourcePath, int page = 0)
         {
             if (page > 0)

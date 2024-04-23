@@ -4,5 +4,5 @@ namespace Starls.Assets.Service.Gateway.Interfaces;
 
 public interface IFilmGateway
 {
-    Task<PagedContent<Film>> GetFilmsAsync(int page = 0);
+    Task<IEnumerable<Film>> GetFilmsAsync();
 }

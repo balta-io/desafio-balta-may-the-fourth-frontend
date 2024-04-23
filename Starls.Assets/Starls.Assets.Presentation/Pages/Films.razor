@@ -33,14 +33,11 @@ else
 
 @code {
     private List<Film>? films;
-    private int CurrentPage = 1;
 
     protected override async Task OnInitializedAsync()
     {
-        var serviceResult = await Service.GetFilmsAsync(CurrentPage);
+        var serviceResult = await Service.GetFilmsAsync();
 
-        films = serviceResult.Results;
-
-        CurrentPage++;
+        films = serviceResult.ToList();
     }
 }

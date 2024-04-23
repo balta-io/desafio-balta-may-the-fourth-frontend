@@ -13,11 +13,9 @@ namespace Starls.Assets.Service
             this.filmGateway = filmGateway;
         }
 
-        public async Task<PagedContent<Film>> GetFilmsAsync(int page = 0)
+        public async Task<IEnumerable<Film>> GetFilmsAsync()
         {
-            var result = await this.filmGateway.GetFilmsAsync(page);
-
-            return result;
+            return await this.filmGateway.GetFilmsAsync();
         }
     }
 }

@@ -1,11 +1,10 @@
 ﻿using Starls.Assets.DTO;
-using Api = Starls.Assets.Service.Gateway.ApiResponseModel;
 
 namespace Starls.Assets.Service.Gateway.Extensions
 {
     internal static class FilmExtensions
     {
-        internal static PagedContent<Film> ToDto(this PagedContent<Api.Film> apiResponse)
+        internal static PagedContent<Film> ToDto(this PagedContent<SwApiResponseModel.Film> apiResponse)
         {
             if (apiResponse == null)
             {
@@ -21,7 +20,7 @@ namespace Starls.Assets.Service.Gateway.Extensions
             };
         }
 
-        internal static Film ToDto(this Api.Film apiResponse)
+        internal static Film ToDto(this SwApiResponseModel.Film apiResponse)
         {
             if (apiResponse == null)
             {
