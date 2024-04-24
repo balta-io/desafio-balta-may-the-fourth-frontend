@@ -1,0 +1,27 @@
+@page "/movies"
+
+@inject IMoviesService MoviesService
+@attribute [StreamRendering]
+
+@if(Movies == null) 
+{
+    <StarWarsLoader Text="Carregando..." />
+}
+else 
+{
+    <Catalog>
+        @foreach (var movie in Movies) 
+        {
+            <CatalogDetail ImgUrl="@movie.ImgUrl" Name="@movie.Title" Link="@($"movies/{movie.Slug ?? movie.Id.ToString()}")"/>
+        }
+    </Catalog>
+}
+
+@code {
+    private IEnumerable<Movie>? Movies;
+
+    protected override async Task OnInitializedAsync() {
+
+       Movies = await MoviesService.ListMoviesAsync();
+    }
+}    
